@@ -76,6 +76,7 @@ let inventory = [
 // ==== Challenge 1 ====
 // The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log provided to you below:
 // console.log(`Car 33 is a *car year goes here* *car make goes here* *car model goes here*`);
+
 // console.log(inventory[33-1]);
 // console.log(inventory[33-1].car_year);
 console.log("Car 33 is a "+inventory[33-1].car_year+" "+inventory[33-1].car_make+" "+inventory[33-1].car_model);
@@ -84,13 +85,39 @@ console.log("Car 33 is a "+inventory[33-1].car_year+" "+inventory[33-1].car_make
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
 // let lastCar = 0;
 // console.log();
+
 console.log(inventory[inventory.length-1].car_make+" "+inventory[inventory.length-1].car_model);
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
+// let carModels = [];
+// let carModelsSorted = [];
+// console.log();
+
+// inventory.sort(inventory.car_model);
+// console.log(inventory.sort(inventory.car_model));
+
+// let carModels = [inventory.car_model];
+// console.log(carModels);
+
+// 1. get car models from inventory and place in array
+// 2. sort them
+// 3. log the results
+
+let modelCount;
 let carModels = [];
 let carModelsSorted = [];
-console.log();
+
+for (modelCount = 0; modelCount < inventory.length; modelCount++) {
+  carModels.push(inventory[modelCount].car_model);                      // 1
+  // console.log(carModels[modelCount]);
+  // console.log(carModels.sort());
+  carModelsSorted = carModels.sort();                                   // 2
+}
+
+console.log(carModelsSorted);                                           // 3
+
+
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
